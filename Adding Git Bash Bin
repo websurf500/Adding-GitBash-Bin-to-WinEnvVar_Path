@@ -1,0 +1,58 @@
+Adding Git Bash's bin directory to the system's PATH environment variable allows tools like Jenkins to find and use the sh command. Here's how you can do it:
+
+Steps to Add Git Bash to PATH in Windows
+-----------------------------------------
+
+First locate Git Bash's bin Directory:
+
+By default, the bin directory is in Git's installation folder. For example:
+
+C:\Program Files\Git\bin
+
+Ensure this path exists on your system.
+
+Open Environment Variables Settings:
+
+Press Win + R, type sysdm.cpl, and press Enter.
+
+Then Go to the Advanced tab and click Environment Variables.
+
+Modify the PATH Variable:
+
+Under System variables, find and select the Path variable, then click Edit.
+
+Click New and add the path to Git Bash's bin directory, e.g.,:
+
+C:\Program Files\Git\bin
+
+Save and Apply Changes:
+
+Click OK to close all dialogs and save the changes.
+
+-----------------------------------------------------------------------------------------------------
+
+Verify PATH Update:
+----------------------
+
+Open a new Command Prompt or PowerShell window and type:
+bash
+
+sh --version
+
+If sh is found, it means the PATH has been updated successfully.
+
+Configure Jenkins to Use sh (Optional):
+
+If Jenkins still cannot find sh, restart the Jenkins service to ensure it picks up the updated PATH.
+Validation in Jenkins
+Test the configuration by creating a Jenkins pipeline or freestyle job and running a simple sh step:
+bash
+Copy code
+sh 'echo "Git Bash is working!"'
+If the command executes successfully, the setup is complete!
+
+
+
+
+
+
